@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice App</title>
+    <script src="app.js"></script>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #818181;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .button {
+        font: bold 14px Arial;
+        text-decoration: none;
+        background-color: #243997;
+        color: #fff;
+        padding: 6px;
+    }
+
+    .button:hover{
+        background-color: #13236b;
+    }
+</style>
+</head>
+<body>
+    <h1>Invoice App</h1>
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td>
+                <script>document.write(firstName);</script>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>
+                <script>document.write(lastName);</script>
+            </td>
+        </tr>
+        <tr>
+            <td>Invoice Amount:</td>
+            <td>
+                <script>document.write(invoiceAmt.toFixed(2));</script>
+            </td>
+        </tr>
+        <script>
+            let markUp;
+
+            if (discountPercentage != 0) {
+                markUp = `<tr>
+                    <td>Discount Percentage:<td>
+                    <td>${discountPercentage * 100}%</td>
+                </tr>
+                <tr>
+                    <td>Discount Amount:<td>
+                    <td>$${discountAmt.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td>Discounted Invoice:</td>
+                    <td>$${invoiceTotal.toFixed(2)}</td>
+                </tr>`;
+                document.write(markUp);
+            }
+        </script>
+    </table>
+    <p>
+        <a href="index.html" class="button">Calculate Another Invoice</a>
+    </p>
+</body>
+</html>
